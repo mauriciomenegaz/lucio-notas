@@ -1,0 +1,81 @@
+#container {
+  width: 800px;
+  height: 500px;
+  background-color: rgb(240, 240, 240);
+  position: relative;
+}
+
+#nivel {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgb(112, 112, 255);
+  margin: 10px;
+  padding: 2px;
+}
+
+#dicas {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: rgb(112, 112, 255);
+  margin: 10px;
+  padding: 2px;
+}
+
+#pontos {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background-color: white;
+  margin: 10px;
+  padding: 2px;
+  font-size: 24px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#vidas {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  background-color: white;
+  margin: 10px;
+  padding: 2px;
+  font-size: 24px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#penta {
+  position: absolute;
+  top: 125px;
+  left: 50px;
+  width: 300px;
+  height: 250px;
+  background-color: rgb(255, 255, 255);
+}
+
+#nota {
+  position: absolute;
+  top: 125px;
+  right: 50px;
+  width: 300px;
+  height: 250px;
+  background-color: white;
+  text-align: center;
+  line-height: 250px;
+  font-size: 48px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: uppercase;
+}
+
+.right {
+  color: green;
+}
+
+.wrong {
+  color: red;
+}
+
+#trebleClef{
+  display: none;
+}
