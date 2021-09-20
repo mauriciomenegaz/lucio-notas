@@ -1,12 +1,12 @@
 // versao inicial (com tudo junto)
 
-var jogo = {
+var jogo = { // migracoa ok
   vidas: 3,
   nota: 64,
   pontos: 0
 }
 
-function jogoInit() {
+function jogoInit() { // migracao ok
   jogo.vidas = 3;
   jogo.pontos = 0;
   document.getElementById('nota').innerHTML = '';
@@ -14,12 +14,12 @@ function jogoInit() {
   jogoDraw();
  }
 
-function jogoStep() {
+function jogoStep() { // migracao ok
   const notas = [62, 64, 65, 67];
   jogo.nota = notas[Math.floor(Math.random() * notas.length)];
 }
 
-function jogoDraw() {
+function jogoDraw() { // migracao ok
   document.getElementById('pontos').innerHTML = jogo.pontos;
   document.getElementById('vidas').innerHTML = jogo.vidas;
   drawNote(jogo.nota);
@@ -52,6 +52,8 @@ function jogoCheckGameOver() {
 
 //////////////////
 
+ // migracao - nao existe essa classe
+
 var osc;
 var audioCtx;
 var amp;
@@ -81,7 +83,7 @@ function audioNoteOff() {
 
 
 //////////////////
-
+// midi input
 
 if (navigator.requestMIDIAccess) {
   console.log('This browser supports WebMIDI!');
@@ -102,7 +104,7 @@ function onMIDISuccess(midiAccess) {
 }
 
 function onMIDIFailure() {
-    console.log('Could not access your MIDI devices.');
+  console.log('Could not access your MIDI devices.');
 }
 
 function getMIDIMessage(message) {
@@ -126,7 +128,6 @@ function noteOn(note) {
     var noteName = noteNames[note - 60];
     jogoNota(note, noteName);  
   }
-  
 }
 
 function noteOff(note) {
@@ -139,7 +140,7 @@ function noteOff(note) {
 
 ////////////////////////
 
-function drawNote(note) {
+function drawNote(note) { // migracao ok
   var c = document.getElementById("penta");
   var ctx = c.getContext("2d");
   
