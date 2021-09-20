@@ -1,0 +1,5 @@
+# rodar local (para testes)
+yarn poi --serve index.html
+
+# build to run on github pages
+yarn poi --prod -d docs --public-url /lucio-notas/ index.html
