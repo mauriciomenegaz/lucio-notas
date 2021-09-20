@@ -1,3 +1,5 @@
+// versao inicial (com tudo junto)
+
 var jogo = {
   vidas: 3,
   nota: 64,

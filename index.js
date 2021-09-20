@@ -1,4 +1,5 @@
 import * as Tone from 'tone'
+import Game from './game'
 
 console.log("hello");
 
@@ -9,3 +10,5 @@ window.onButton = function () {
   //play a middle 'C' for the duration of an 8th note
   synth.triggerAttackRelease("C4", "8n");
 }
+
+window.game = new Game();

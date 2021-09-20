@@ -1,3 +1,7 @@
+# no inicio, logo apos criar o esqueleto do projeto:
+yarn init
+yarn add poi --dev
+
 # rodar local (para testes)
 yarn poi --serve index.html
 
