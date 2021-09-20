@@ -1,0 +1,15 @@
+{
+  "name": "lucio-notas",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "https://github.com/mauriciomenegaz/lucio-notas.git",
+  "author": "Mauricio Menegaz <mauricio.menegaz@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "poi": "^12.10.3"
+  },
+  "dependencies": {
+    "tone": "^14.7.77"
+  }
+}
