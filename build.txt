@@ -11,7 +11,8 @@ yarn poi --prod -d docs --public-url /lucio-notas/ index.html
 
 ###############
 # to-do
-# - implementar a classe "MidiInput" com os callbacks
-# - testar
-# - extrair classe "Note"
+# - extrair classe "Note" e aumentar o range de notas disponiveis
+# - renderizar notas fora do pentagrama
 # - padronizar nomes de variaveis em ingles
+# - modo "música"
+# - configuração dos níveis de dificuldade

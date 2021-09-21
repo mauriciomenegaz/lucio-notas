@@ -85,16 +85,16 @@ function audioNoteOff() {
 //////////////////
 // midi input
 
-if (navigator.requestMIDIAccess) {
+if (navigator.requestMIDIAccess) { // migracao ok
   console.log('This browser supports WebMIDI!');
 } else {
   console.log('WebMIDI is not supported in this browser.');
 }
 
-navigator.requestMIDIAccess()
+navigator.requestMIDIAccess() // migracao ok
   .then(onMIDISuccess, onMIDIFailure);
 
-function onMIDISuccess(midiAccess) {
+function onMIDISuccess(midiAccess) { // migracao ok
   var inputs = midiAccess.inputs;
   var outputs = midiAccess.outputs;
 
@@ -103,11 +103,11 @@ function onMIDISuccess(midiAccess) {
   }
 }
 
-function onMIDIFailure() {
+function onMIDIFailure() { // migracao ok
   console.log('Could not access your MIDI devices.');
 }
 
-function getMIDIMessage(message) {
+function getMIDIMessage(message) { // migracao ok
   var command = message.data[0];
   var note = message.data[1];
   var velocity = (message.data.length > 2) ? message.data[2] : 0; // a velocity value might not be included with a noteOff command

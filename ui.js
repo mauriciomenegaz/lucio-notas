@@ -19,10 +19,14 @@ export default class UI {
     document.getElementById('nota').innerHTML = noteName;
     document.getElementById('nota').classList.toggle('right', isCorrect);
     document.getElementById('nota').classList.toggle('wrong', !isCorrect);
+
+    setTimeout(() => { document.getElementById('nota').innerHTML = '' }, 
+               500);
   }
 
-  gameover() {
-    document.getElementById('nota').innerHTML = 'GAME OVER';
+  gameOver() {
+    setTimeout(() => { document.getElementById('nota').innerHTML = 'GAME OVER' }, 
+               501);
   }
 
   pentagrama(note) {

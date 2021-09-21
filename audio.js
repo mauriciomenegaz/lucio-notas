@@ -1,5 +1,9 @@
 export default class Audio {
   play(audioDomId) {
-    document.getElementById(audioDomId).play();
+    console.log('play ' + audioDomId)
+    document.getElementById(audioDomId).play()
+                                       .then(() => { console.log('resolved')}, 
+                                             () => { console.log('rejected')})
+                                       .catch(err => { console.log(err) });
   }
 }
