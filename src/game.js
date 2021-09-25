@@ -2,6 +2,7 @@ import UI from './ui'
 import Piano from './piano'
 import Audio from './audio'
 import MidiInput from './midi_input'
+import KbInput from './kb_input'
 
 export default class Game {
   constructor() {
@@ -11,6 +12,8 @@ export default class Game {
     this.audio = new Audio();
     this.midiInput = new MidiInput(this.onNotePlayed.bind(this),
                                    this.onNoteReleased.bind(this));
+    this.kbInput = new KbInput(this.onNotePlayed.bind(this),
+                               this.onNoteReleased.bind(this));
   }
 
   start() {

@@ -11,6 +11,7 @@ yarn poi --prod -d docs --public-url /lucio-notas/ index.html
 
 ###############
 # to-do
+# - keyboard input
 # - extrair classe "Note" e aumentar o range de notas disponiveis (ver game.js, piano.js)
 # - renderizar notas fora do pentagrama (pelo menos o do central)
 # - padronizar nomes de variaveis em ingles (dar uma passada geral pelo codigo)

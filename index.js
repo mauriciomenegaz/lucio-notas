@@ -1,3 +1,3 @@
-import Game from './game'
+import Game from './src/game'
 
 window.game = new Game();
