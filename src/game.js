@@ -3,10 +3,10 @@ import Piano from './piano'
 import Audio from './audio'
 import MidiInput from './midi_input'
 import KbInput from './kb_input'
+import Note from './note'
 
 export default class Game {
   constructor() {
-    console.log("running game constructor")
     this.ui = new UI();
     this.piano = new Piano();
     this.audio = new Audio();
@@ -27,27 +27,24 @@ export default class Game {
 
   step() {
     const notas = [62, 64, 65, 67];
-    this.note = notas[Math.floor(Math.random() * notas.length)];
+    const midicode = notas[Math.floor(Math.random() * notas.length)];
+    this.note = Note.fromMidiCode(midicode)
   }
 
   draw() {
     this.ui.pontos(this.pontos);
     this.ui.vidas(this.vidas)
-    this.ui.pentagrama(this.note);
+    this.ui.pentagrama(this.note.midiCode);
   }
 
   onNotePlayed(note) {
-    if (!(note >= 60 && note <= 71)) {
+    if (!(note.midiCode >= 60 && note.midiCode <= 71)) {
       return;
     }
 
-    // TODO: extrair uma classe para isso
-    const noteNames = ["Do", "", "Re", "", "Mi", "Fa", "", "Sol", "", "La", "", "Si"];
-    var noteName = noteNames[note - 60];
-
     if(this.vidas == 0) return;
     
-    var acertou = (note == this.note);
+    var acertou = (note.midiCode == this.note.midiCode);
     
     if(acertou) {
       this.piano.play(note);
@@ -58,7 +55,7 @@ export default class Game {
       this.vidas = this.vidas - 1;
       this.checkGameOver();
     }
-    this.ui.nota(noteName, acertou);
+    this.ui.nota(note.noteName, acertou);
     
     this.draw();
   }

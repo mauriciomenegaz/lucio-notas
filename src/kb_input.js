@@ -1,3 +1,5 @@
+import Note from './note'
+
 export default class KbInput {
 
   constructor(noteOnCallback, noteOffCallback) {
@@ -25,10 +27,10 @@ export default class KbInput {
       KeyP: 71
     }
 
-    const note = convTable[code]
+    const midiCode = convTable[code]
 
-    if(note) {
-      this.noteOnCallback(note);
+    if(midiCode) {
+      this.noteOnCallback(Note.fromMidiCode(midiCode));
     }
     
   }

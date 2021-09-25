@@ -10,11 +10,10 @@ export default class Piano {
     // C4 = middle C (midi value 60)
 
     // TODO: extrair isso pra classe "Note"
-    const noteNames = ["C4", "", "D4", "", "E4", "F4", "", "G4", "", "A4", "", "B4"];
-    var noteName = noteNames[note-60];
+    
 
     //play a middle 'C' for the duration of an 8th note
-    this.synth.triggerAttackRelease(noteName, "8n");
+    this.synth.triggerAttackRelease(note.abcNoteName, "8n");
   }
 
   playError() {

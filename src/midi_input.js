@@ -1,3 +1,5 @@
+import Note from './note'
+
 export default class MidiInput {
   constructor(noteOnCallback, noteOffCallback) {
     if (navigator.requestMIDIAccess) {
@@ -42,7 +44,7 @@ export default class MidiInput {
   }
 
   noteOn(note) {
-    this.noteOnCallback(note);
+    this.noteOnCallback(Note.fromMidiCode(code));
   }
 
   noteOff(note) {
