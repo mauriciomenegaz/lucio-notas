@@ -7,15 +7,3 @@ yarn poi --serve index.html
 
 # build to run on github pages
 yarn poi --prod -d docs --public-url /lucio-notas/ index.html
-
-
-###############
-# to-do
-# - keyboard input
-# - extrair classe "Note" e aumentar o range de notas disponiveis (ver game.js, piano.js)
-# - renderizar notas fora do pentagrama (pelo menos o do central)
-# - padronizar nomes de variaveis em ingles (dar uma passada geral pelo codigo)
-# - modo "música" (parabens, hey jude, escravos de jo, yellow) (ver qual se encaixa melhor no range que ele ja aprendeu)
-# - configuração dos níveis de dificuldade (facil = D4..G4)
-# - criar o README do projeto
-# - implementar dicas
