@@ -40,6 +40,9 @@ export default class UI {
     var x = 120;
     var y;
     switch(note) {
+      case 60: // C
+        y = 212;
+        break;
       case 62: // D
         y = 202;
         break;
@@ -52,13 +55,26 @@ export default class UI {
       case 67: // G
         y = 170;
     }
-    
+
     const r = 10;
     
     ctx.beginPath();
     ctx.arc(x, y, r, 0, 2 * Math.PI, false);
     ctx.fillStyle = 'green';
     ctx.fill();
+
+    const l = r + 6
+
+    if(note <= 60) {
+      ctx.beginPath();
+      ctx.moveTo(x - l, y - 1);
+      ctx.lineTo(x + l, y - 1);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x - l, y);
+      ctx.lineTo(x + l, y);
+      ctx.stroke();
+    }
   }
 
   

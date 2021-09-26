@@ -14,6 +14,7 @@ export default class Game {
                                    this.onNoteReleased.bind(this));
     this.kbInput = new KbInput(this.onNotePlayed.bind(this),
                                this.onNoteReleased.bind(this));
+
   }
 
   start() {
@@ -26,7 +27,7 @@ export default class Game {
   }
 
   step() {
-    const notas = [62, 64, 65, 67];
+    const notas = [60, 62, 64, 65, 67];
     const midicode = notas[Math.floor(Math.random() * notas.length)];
     this.note = Note.fromMidiCode(midicode)
   }
