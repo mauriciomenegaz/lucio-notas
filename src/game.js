@@ -4,6 +4,7 @@ import Audio from './audio'
 import MidiInput from './midi_input'
 import KbInput from './kb_input'
 import Note from './note'
+import Settings from './settings'
 
 export default class Game {
   constructor() {
@@ -14,22 +15,31 @@ export default class Game {
                                    this.onNoteReleased.bind(this));
     this.kbInput = new KbInput(this.onNotePlayed.bind(this),
                                this.onNoteReleased.bind(this));
-
+    this.settings = new Settings();
   }
 
   start() {
     console.log("starting new game")
     this.lives = 3;
     this.score = 0;
+    this.stepNumber = 0;
     this.ui.clear();
     this.step();
     this.draw();
   }
 
   step() {
-    const notas = [60, 62, 64, 65, 67];
-    const midicode = notas[Math.floor(Math.random() * notas.length)];
-    this.note = Note.fromMidiCode(midicode)
+    var midiCode;
+
+    if(this.settings.noteMode == 'random') {
+      const notas = [60, 62, 64, 65, 67];
+      midiCode = notas[Math.floor(Math.random() * notas.length)];
+    } else {
+      const notas = [62, 62, 64, 62];
+      midiCode = notas[this.stepNumber];
+    }
+    this.note = Note.fromMidiCode(midiCode)
+    this.stepNumber = this.stepNumber + 1;
   }
 
   draw() {
