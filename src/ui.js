@@ -4,32 +4,32 @@ export default class UI {
   }
 
   clear() {
-    this.nota('');
+    this.note('');
   }
 
-  pontos(p) {
-    document.getElementById('pontos').innerHTML = p;
+  score(p) {
+    document.getElementById('score').innerHTML = p;
   }
 
-  vidas(v) {
-    document.getElementById('vidas').innerHTML = v;
+  lives(v) {
+    document.getElementById('lives').innerHTML = v;
   }
 
-  nota(noteName, isCorrect) {
-    document.getElementById('nota').innerHTML = noteName;
-    document.getElementById('nota').classList.toggle('right', isCorrect);
-    document.getElementById('nota').classList.toggle('wrong', !isCorrect);
+  note(noteName, isCorrect) {
+    document.getElementById('note').innerHTML = noteName;
+    document.getElementById('note').classList.toggle('right', isCorrect);
+    document.getElementById('note').classList.toggle('wrong', !isCorrect);
 
-    setTimeout(() => { document.getElementById('nota').innerHTML = '' }, 
+    setTimeout(() => { document.getElementById('note').innerHTML = '' }, 
                500);
   }
 
   gameOver() {
-    setTimeout(() => { document.getElementById('nota').innerHTML = 'GAME OVER' }, 
+    setTimeout(() => { document.getElementById('note').innerHTML = 'GAME OVER' }, 
                501);
   }
 
-  pentagrama(note) {
+  pentagram(note) {
     var c = document.getElementById("penta");
     var ctx = c.getContext("2d");
     

@@ -9,9 +9,6 @@ export default class Piano {
   play(note) {
     // C4 = middle C (midi value 60)
 
-    // TODO: extrair isso pra classe "Note"
-    
-
     //play a middle 'C' for the duration of an 8th note
     this.synth.triggerAttackRelease(note.abcNoteName, "8n");
   }

@@ -19,8 +19,8 @@ export default class Game {
 
   start() {
     console.log("starting new game")
-    this.vidas = 3;
-    this.pontos = 0;
+    this.lives = 3;
+    this.score = 0;
     this.ui.clear();
     this.step();
     this.draw();
@@ -33,9 +33,9 @@ export default class Game {
   }
 
   draw() {
-    this.ui.pontos(this.pontos);
-    this.ui.vidas(this.vidas)
-    this.ui.pentagrama(this.note.midiCode);
+    this.ui.score(this.score);
+    this.ui.lives(this.lives)
+    this.ui.pentagram(this.note.midiCode);
   }
 
   onNotePlayed(note) {
@@ -43,20 +43,20 @@ export default class Game {
       return;
     }
 
-    if(this.vidas == 0) return;
+    if(this.lives == 0) return;
     
-    var acertou = (note.midiCode == this.note.midiCode);
+    var isCorrect = (note.midiCode == this.note.midiCode);
     
-    if(acertou) {
+    if(isCorrect) {
       this.piano.play(note);
-      this.pontos = this.pontos + 1
+      this.score = this.score + 1
       this.step();
     } else {
       this.piano.playError();
-      this.vidas = this.vidas - 1;
+      this.lives = this.lives - 1;
       this.checkGameOver();
     }
-    this.ui.nota(note.noteName, acertou);
+    this.ui.note(note.noteName, isCorrect);
     
     this.draw();
   }
@@ -65,7 +65,7 @@ export default class Game {
   }
 
   checkGameOver() {
-    if(this.vidas == 0) {
+    if(this.lives == 0) {
       this.ui.gameOver();
     }
   }
