@@ -3,7 +3,6 @@ import Piano from './piano'
 import Audio from './audio'
 import MidiInput from './midi_input'
 import KbInput from './kb_input'
-import Note from './note'
 import Settings from './settings'
 
 export default class Game {
@@ -22,24 +21,14 @@ export default class Game {
     console.log("starting new game")
     this.lives = 3;
     this.score = 0;
-    this.stepNumber = 0;
+    this.noteSequencer = this.settings.createNoteSequencer();
     this.ui.clear();
     this.step();
     this.draw();
   }
 
   step() {
-    var midiCode;
-
-    if(this.settings.noteMode == 'random') {
-      const notas = [60, 62, 64, 65, 67];
-      midiCode = notas[Math.floor(Math.random() * notas.length)];
-    } else {
-      const notas = [62, 62, 64, 62];
-      midiCode = notas[this.stepNumber];
-    }
-    this.note = Note.fromMidiCode(midiCode)
-    this.stepNumber = this.stepNumber + 1;
+    this.note = this.noteSequencer.nextNote();
   }
 
   draw() {
