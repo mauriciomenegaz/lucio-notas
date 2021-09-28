@@ -1,4 +1,4 @@
-import Note from './note'
+import Note from '../note'
 
 export default class MidiInput {
   constructor(noteOnCallback, noteOffCallback) {

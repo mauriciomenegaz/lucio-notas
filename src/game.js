@@ -1,8 +1,8 @@
 import UI from './ui'
 import Piano from './piano'
 import Audio from './audio'
-import MidiInput from './midi_input'
-import KbInput from './kb_input'
+import MidiInput from './inputs/midi_input'
+import KbInput from './inputs/kb_input'
 import Settings from './settings'
 
 export default class Game {
